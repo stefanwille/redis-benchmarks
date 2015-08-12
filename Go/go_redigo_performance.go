@@ -5,7 +5,7 @@ import (
 	"github.com/garyburd/redigo/redis"
 )
 
-const N = 1600000
+const N = 1000000
 
 func main() {
 	c, err := redis.Dial("tcp", ":6379")
@@ -18,11 +18,6 @@ func main() {
 		c.Send("SET", "foo", "bar")
 	}
 	c.Flush()
-	for i := 0; i < N; i++ {
-		_, err := redis.String(c.Receive())
-		errorHandler(err)
-	}
-	errorHandler(err)
 	fmt.Println("Done")
 }
 
