@@ -1,6 +1,6 @@
 extern crate redis;
 
-const N : usize = 1000000;
+const N : usize = 1_000_000;
 
 fn main() {
     run().unwrap();
