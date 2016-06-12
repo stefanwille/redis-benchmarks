@@ -16,3 +16,5 @@ Java/jedis-2.7.2.tar.gz
 Java/*.class
 
 Node.js/node_modules
+
+Rust/target
