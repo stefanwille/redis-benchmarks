@@ -17,8 +17,10 @@ int main () {
     puts("Connected!");
     // void *redisCommand(redisContext *c, const char *format, ...);
 
+    const char *argv[] = { "SET", "foo", "bar" };
+    const size_t argv_c[] = { 3, 3, 3 };
     for(int i = 0; i < N; i++) {
-      redisAppendCommand(redis,"SET foo bar");
+      redisAppendCommandArgv(redis, 3, argv, argv_c);
     }
 
     for(int i = 0; i < N; i++) {
