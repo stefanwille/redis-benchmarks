@@ -18,11 +18,6 @@ func main() {
 		c.Send("SET", "foo", "bar")
 	}
 	c.Flush()
-	for i := 0; i < N; i++ {
-		_, err := redis.String(c.Receive())
-		errorHandler(err)
-	}
-	errorHandler(err)
 	fmt.Println("Done")
 }
 
